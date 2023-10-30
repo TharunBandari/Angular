@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="1255230527508130800" datatype="html">
+        <source>Kaṭṭumāṉattiṉ kīḻ</source>
+        <target>Tamil</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description"> Title for the Under Construction Card]</note>
+        <note priority="1" from="meaning">Card Header </note>
+      </trans-unit>
+      <trans-unit id="3428864998145640658" datatype="html">
+        <source>Intap pakkam kaṭṭumāṉattil uḷḷatu</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description"> description for Under Construction Card</note>
+        <note priority="1" from="meaning">Card Header </note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

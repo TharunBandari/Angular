@@ -1,0 +1,33 @@
+nav {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    background-color: white;
+    color: white;
+    padding: 10px;
+  }
+  
+
+  nav a {
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  nav a img {
+    width: 300px;
+    display: block;
+    margin: 0 auto; 
+  }
+  
+
+  nav a + a img {
+    margin-left: 20px;
+  }
+  
+  router-outlet {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  

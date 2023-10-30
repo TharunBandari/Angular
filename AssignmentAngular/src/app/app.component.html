@@ -1,0 +1,18 @@
+<router-outlet></router-outlet>
+<div>
+  <select [(ngModel)]="selectedState">
+    <option value="">Select State</option>
+    <option value="Andhra Pradesh">Andhra Pradesh</option>
+    <option value="Karnataka">Karnataka</option>
+    <option value="Kerala">Kerala</option>
+    <option value="Tamil Nadu">Tamil Nadu</option>
+    <option value="Telangana">Telangana</option>
+  </select>
+</div>
+
+<div *ngIf="selectedState">
+  <h2>Districts of {{selectedState}}</h2>
+  <ul>
+    <li *ngFor="let district of districts[selectedState]">{{district}}</li>
+  </ul>
+</div>

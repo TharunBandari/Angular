@@ -1,0 +1,58 @@
+<!-- Any template-driven-form use Ngform attribute(directive)
+The corresponding model is automatically created by angular
+UserData becomes the object that acts as a model. UserData is automatically
+created by angular. It will have fields like firstName, lastName, salary and joinDate.
+Ngform is builtin class.
+<form #userData="ngForm" translates to  var userData = new NgForm(); by angular.
+-->
+ 
+<!-- Add user form -->
+<b>Enter user's data</b><br>
+<form #userData="ngForm" (ngSubmit)="addUser(userData)">
+  First Name <input type="text" name="firstName" ngModel /><br>
+  Last Name <input type="text" name="lastName" ngModel /><br>
+  Join Date <input type="date" name="joinDate" min="1997-01-03" max="2023-10-20" formControlName="joinDate"/><br>
+  Salary <input type="number" name="salary" formControlName="salary" /><br>
+  <!--Valid is a build in property of form If all validations hs passed then valid be true else false-->
+  <input type="submit" value="Add user" [disabled]="!this.userForm.value" />
+</form>
+ 
+<!-- User Data -->
+<h2>User Data</h2>
+ 
+<table border="1">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Join Date</th>
+    <th>Salary</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let user of userList">
+    <td>{{ user.firstName }}</td>
+    <td>{{ user.lastName }}</td>
+    <td>{{ user.joinDate }}</td>
+    <td>{{ user.salary }}</td>
+    <td>
+      <button (click)="editUser(user)">Edit</button>
+      <button (click)="deleteUser(user)">Delete</button>
+    </td>
+  </tr>
+</table>
+ 
+<!-- Edit user form (hidden by default) -->
+<div *ngIf="editingUser">
+  <h2>Edit User</h2>
+  <form #editForm="ngForm" (ngSubmit)="updateUser(editForm)">
+    First Name <input type="text" name="firstName" ngModel [(ngModel)]="editingUser.firstName" /><br>
+    Last Name <input type="text" name="lastName" ngModel [(ngModel)]="editingUser.lastName" /><br>
+    Join Date <input type="date" name="joinDate" ngModel [(ngModel)]="editingUser.joinDate" /><br>
+    Salary <input type="number" name="salary" ngModel [(ngModel)]="editingUser.salary" /><br>
+    <input type="submit" value="Update user" />
+    <button (click)="cancelEdit()">Cancel</button>
+  </form>
+</div>
+ 
+ 
+ 
+<router-outlet></router-outlet>
